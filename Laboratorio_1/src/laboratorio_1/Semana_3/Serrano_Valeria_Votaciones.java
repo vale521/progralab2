@@ -33,8 +33,17 @@ public class Serrano_Valeria_Votaciones {
         System.out.print("PALABRA: ");
         palabra =lea.next();
         
+        String reversa="";
+        char letra;
+        int length= palabra.length();
+        int l;
+        for (l=(length-1); l>0; l--)
+        {
+        letra=palabra.charAt(l);
+        reversa= reversa+letra;
+        }
+        System.out.print("AL REVES: " + reversa);
         
-        System.out.print("AL REVES: ");
         
         
         break;
