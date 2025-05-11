@@ -1,5 +1,5 @@
 
-package laboratorio_1.Semana_3;
+package laboratorio_1;
 import java.util.Scanner;
 import java.util.Random;
 import java.security.SecureRandom;
@@ -19,7 +19,7 @@ public class Serrano_Valeria_Votaciones {
     do
     {
     System.out.println("--------------------------    MENÚ PRINCIPAL    ------------------------ ");
-    System.out.println("Elige una de las siguientes opciones: \n    1) Abrir Caj \n    2) numero perfecto \n    3) primos \n    4) Votaciones \n    5) Salir");
+    System.out.println("Elige una de las siguientes opciones: \n    1)palbra al reves \n    2) numero perfecto \n    3) primos \n    4) Votaciones \n    5) Salir");
     
     System.out.print("Opción: ");
     int opcion_menu = lea.nextInt();
