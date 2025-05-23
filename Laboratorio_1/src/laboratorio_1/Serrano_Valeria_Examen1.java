@@ -117,7 +117,7 @@ public class Serrano_Valeria_Examen1 {
         String choose;
         
         System.out.println("--- Juego piedra, papel o tijera ---");
-        while(seguirJuego=true)
+        while(seguirJuego==true)
         {
             do
             {
@@ -180,7 +180,6 @@ public class Serrano_Valeria_Examen1 {
                     if (answer.equals("no"))
                     {
                         seguirJuego=false;
-                        break;
                     }  
         
         }
@@ -188,17 +187,55 @@ public class Serrano_Valeria_Examen1 {
 
         break;
         case 4:
+        int random100 =random.nextInt(100)+1;
+        int num=0;
+        boolean adivino=false;
+        
+        System.out.println("------------- Adivinar -------------");
+        System.out.println("Recuerda. Tienes solo 10 intentos.");
+        
+        for (int i=1; i<=10;i++)
+        {
+            System.out.println("Ingrese un numero entre 0 y 100. Intento n."+i);
+            num=lea.nextInt();
+            
+        if (num<random100 && num>=0 && num<=100)
+        {
+            System.out.println("El numero a adivinar, es menor al ingresado");
+        }
+        else if (num>random100 && num>=0 && num<=100)
+        {
+            System.out.println("El numero a adivinar, es mayor al ingresado");
+        }
+        else if (num==random100 && num>=0 && num<=100)
+        {
+            System.out.println("Felicidades adivinaste!!!");
+            i=11;
+            adivino=true;
+        }
+        else 
+        {
+            System.out.println("Tu numero sale del rango de 0-100");
+        }
+        }
+        
+        if (adivino==false)
+        {
+            System.out.println("\nLo sentimos, tus intentos han acabado");
+            System.out.println("El numero a adivinar era: "+random100);
+        }
+             
+        System.out.println("------------------------------------");
         break;
         case 5:
-            sesion=false;
+        System.out.println("------------- Salir ----------------");
+        System.out.println("Byyyyyyyyyyyyeeeeeeeeee");
+        System.out.println("------------------------------------");
+        sesion=false;
         break;
         default:
         break;
     }
-            
-            
-            
-            
-    }while (sesion=true);
+    }while (sesion==true);
     }
 }
