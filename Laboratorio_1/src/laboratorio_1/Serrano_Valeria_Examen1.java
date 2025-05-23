@@ -2,10 +2,12 @@
 package laboratorio_1;
 
 import java.util.Scanner;
+import java.util.Random;
 public class Serrano_Valeria_Examen1 {
     public static void main(String[] args) {
     Scanner lea=new Scanner(System.in);
     lea.useDelimiter("\n");
+    Random random=new Random();
         
     boolean sesion=true;
     int opcion;   
@@ -107,12 +109,15 @@ public class Serrano_Valeria_Examen1 {
 
         break;
         case 3:
-        System.out.println("--- Juego piedra, papel o tijera ---");
-        boolean seguirJuego=false;
-        boolean continuar=true;
+        boolean seguirJuego=true;
+        
         int ronda=2;
+        String answer;
         String respuesta;
-        do
+        String choose;
+        
+        System.out.println("--- Juego piedra, papel o tijera ---");
+        while(seguirJuego=true)
         {
             do
             {
@@ -123,28 +128,62 @@ public class Serrano_Valeria_Examen1 {
                 System.out.println("opcion no válida. Intenta con piedra, papel o tijera.");
             }   
             }while (!respuesta.equals("piedra") && !respuesta.equals("papel") && !respuesta.equals("tijera"));
-            System.out.println("xx");
-        /*do
-        {
-        System.out.println("¿Quieres seguir con ronda "+ronda+ " ? (si/no)");   
-        String respuesta= lea.next();
-        if (respuesta.equalsIgnoreCase("si"))
-        {
-           ronda++;
-           validacionrespuesta=true;
-           seguirJuego=true;
-        }
-        else if (respuesta.equalsIgnoreCase("no"))
-        {
-           validacionrespuesta=true;
-           seguirJuego=false;
-           System.out.println("Buena partida. Hasta pronto");
-           break;
-        }
-        */
+            
+            int numRandom= random.nextInt(3);
+            if (numRandom==0)
+            {
+                choose="piedra";
+            }
+            else if (numRandom==1)
+            {
+               choose="papel"; 
+            }    
+            else
+            {
+                choose="tijera";
+            }
+            System.out.println("El programa eligió: "+ choose);
+            
+            if (respuesta.equals(choose))
+            {
+                System.out.println("Empate");
+            }
+            else
+            {
+                if ((respuesta.equals("papel") && choose.equals("piedra")) || (respuesta.equals("tijera") && choose.equals("papel")) || (respuesta.equals("piedra") && choose.equals("tijera")) )
+                {
+                    System.out.println("Ganó!! Felicidades");
+                }
+                else
+                {
+                    System.out.println("Perdió. :( ");
+                }
+                        
+            }
+            
+            do
+            {
+                System.out.println("¿Quieres continuar con la ronda "+ronda);
+                answer=lea.next();
+                
+                if (!answer.equals("si") && !answer.equals("no"))   
+                {
+                    System.out.println("Respuesta invalida. Intente nuevamente.");
+                } 
+                else
+                {
+
+                }
+
+            }while (!answer.equals("si") && !answer.equals("no"));
+            ronda++;
+                    if (answer.equals("no"))
+                    {
+                        seguirJuego=false;
+                        break;
+                    }  
         
-        
-        }while(seguirJuego=true);
+        }
         System.out.println("------------------------------------");
 
         break;
