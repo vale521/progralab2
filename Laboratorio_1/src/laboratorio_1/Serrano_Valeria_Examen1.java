@@ -109,13 +109,22 @@ public class Serrano_Valeria_Examen1 {
         case 3:
         System.out.println("--- Juego piedra, papel o tijera ---");
         boolean seguirJuego=false;
-        boolean validacionrespuesta=true;
+        boolean continuar=true;
         int ronda=2;
+        String respuesta;
         do
         {
-        
-            
-        do
+            do
+            {
+            System.out.println("Ingrese piedra, papel o tijera.");
+            respuesta=lea.next();
+            if (!respuesta.equals("piedra") && !respuesta.equals("papel") && !respuesta.equals("tijera"))
+            {
+                System.out.println("opcion no válida. Intenta con piedra, papel o tijera.");
+            }   
+            }while (!respuesta.equals("piedra") && !respuesta.equals("papel") && !respuesta.equals("tijera"));
+            System.out.println("xx");
+        /*do
         {
         System.out.println("¿Quieres seguir con ronda "+ronda+ " ? (si/no)");   
         String respuesta= lea.next();
@@ -127,17 +136,12 @@ public class Serrano_Valeria_Examen1 {
         }
         else if (respuesta.equalsIgnoreCase("no"))
         {
-           System.out.println("Buena partida. Hasta pronto");
+           validacionrespuesta=true;
            seguirJuego=false;
+           System.out.println("Buena partida. Hasta pronto");
            break;
         }
-        else
-        {
-           System.out.println("Respuesta invalida. Intentelo denuevo.");
-           validacionrespuesta=false;
-           seguirJuego=false;     
-        }    
-        }while (validacionrespuesta=false);
+        */
         
         
         }while(seguirJuego=true);
