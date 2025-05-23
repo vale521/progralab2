@@ -39,20 +39,110 @@ public class Serrano_Valeria_Examen1 {
         System.out.println("------------------------------------");
         break;
         case 2:
-        //variable
-        String junto="";
             
         System.out.println("-------------  Clave   -------------");
-        System.out.print("Ingrese un mensaje a cifrar o desifrar: ");
-        String mensaje=lea.next();
+        System.out.println("Elige una de las siguientes opciones: \n 1)Encriptar \n 2)Desencriptar");
+        int opcionclave=lea.nextInt();
         
-        for (int i=0; i<=mensaje.length(); i++)
+        switch (opcionclave)
         {
-          char caracter = mensaje.charAt(i);
-          
+        case 1: 
+        String junto="";
+        System.out.print("Ingrese un mensaje a cifrar: ");
+        String mensajeEncriptado=lea.next();
+        
+        for (int i=0; i<=mensajeEncriptado.length(); i++)
+        {
+          char caracter = mensajeEncriptado.charAt(i);
+          if (!(caracter>='a' && caracter>='z') && !(caracter>='a' && caracter>='z'))
+          {
+              junto+=caracter;
+          }
+          else
+          {    
+          if (caracter>='a' && caracter>='z' )
+          {
+              
+              junto+=(char) 'z'-(caracter-'a');
+          }
+          else
+          {
+              junto+=(char) 'Z'-(caracter-'A');
+          }
+          }
+              System.out.println("El mensaje cifrado es: "+ junto);
+        
         }
         break;
+        case 2:
+        String juntar="";
+        System.out.print("Ingrese un mensaje a cifrar: ");
+        String mensajeDesencriptado=lea.next();
+        
+        for (int i=0; i<=mensajeDesencriptado.length(); i++)
+        {
+          char caracter = mensajeDesencriptado.charAt(i);
+          if (!(caracter>='a' && caracter>='z') && !(caracter>='a' && caracter>='z'))
+          {
+              juntar+=caracter;
+          }
+          else
+          {    
+          if (caracter>='a' && caracter>='z' )
+          {
+              
+              juntar+=(char) 'z'-(caracter-'a');
+          }
+          else
+          {
+              juntar+=(char) 'Z'-(caracter-'A');
+          }
+          }
+              System.out.println("El mensaje cifrado es: "+ juntar);
+        
+        }
+        break;
+        }
+        System.out.println("------------------------------------");
+
+        break;
         case 3:
+        System.out.println("--- Juego piedra, papel o tijera ---");
+        boolean seguirJuego=false;
+        boolean validacionrespuesta=true;
+        int ronda=2;
+        do
+        {
+        
+            
+        do
+        {
+        System.out.println("¿Quieres seguir con ronda "+ronda+ " ? (si/no)");   
+        String respuesta= lea.next();
+        if (respuesta.equalsIgnoreCase("si"))
+        {
+           ronda++;
+           validacionrespuesta=true;
+           seguirJuego=true;
+        }
+        else if (respuesta.equalsIgnoreCase("no"))
+        {
+           System.out.println("Buena partida. Hasta pronto");
+           seguirJuego=false;
+           break;
+        }
+        else
+        {
+           System.out.println("Respuesta invalida. Intentelo denuevo.");
+           validacionrespuesta=false;
+           seguirJuego=false;     
+        }    
+        }while (validacionrespuesta=false);
+        
+        
+        }while(seguirJuego=true);
+        System.out.println("------------------------------------");
+
         break;
         case 4:
         break;
