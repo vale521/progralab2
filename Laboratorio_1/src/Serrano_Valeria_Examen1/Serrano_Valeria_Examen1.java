@@ -1,5 +1,5 @@
 
-package laboratorio_1;
+package Serrano_Valeria_Examen1;
 
 import java.util.Scanner;
 import java.util.Random;
